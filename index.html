@@ -50,48 +50,81 @@
             max-width: 500px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        .gift-section {
-            background: #f0f7ff;
-            padding: 30px;
-            margin: 40px 0;
-            text-align: center;
-        }
-        .gift-list {
-            list-style: none;
-            padding: 0;
-            max-width: 500px;
-            margin: 20px auto;
-        }
-        .gift-list li {
+        .rsvp-form {
             background: white;
-            margin: 10px 0;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .photo-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin: 30px 0;
-        }
-        .photo-gallery img {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-        }
-        .closing-text {
-            font-style: italic;
-            margin: 40px auto;
-            text-align: center;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px auto;
             max-width: 500px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        @media (min-width: 768px) {
-            h1 { font-size: 3.5rem; }
-            .photo-gallery img {
-                width: calc(50% - 15px);
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .attending-options {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .attending-btn {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            background: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .attending-btn.selected {
+            background: #1e3a8a;
+            color: white;
+            border-color: #1e3a8a;
+        }
+        .submit-btn {
+            background: #1e3a8a;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background: #3b82f6;
+        }
+        .confirmation-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px auto;
+            max-width: 500px;
+            text-align: center;
+        }
+        @media (max-width: 480px) {
+            .attending-options {
+                flex-direction: column;
+            }
+            h1 {
+                font-size: 2rem;
             }
         }
     </style>
