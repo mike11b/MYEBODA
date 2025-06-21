@@ -135,6 +135,38 @@
             <img src="https://ejemplo.com/mapa-salon.jpg" alt="Mapa Salón" style="width:100%; margin-top:15px; border-radius:5px;">
         </div>
 
+          <!-- Formulario de RSVP -->
+        <div class="rsvp-form" id="rsvpForm">
+            <h2 style="text-align: center; margin-bottom: 20px;">Confirma tu asistencia</h2>
+            <form id="weddingRsvp">
+                <div class="form-group">
+                    <label for="name">Nombre completo *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>¿Asistirás? *</label>
+                    <div class="attending-options">
+                        <button type="button" class="attending-btn" data-value="si">¡Sí, estaré!</button>
+                        <button type="button" class="attending-btn" data-value="no">No podré asistir</button>
+                    </div>
+                    <input type="hidden" id="attending" name="attending" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Mensaje para los novios (opcional)</label>
+                    <textarea id="message" name="message"></textarea>
+                </div>
+                
+                <button type="button" id="sendWhatsApp" class="submit-btn">Enviar por WhatsApp</button>
+            </form>
+        </div>
+
+        <div class="confirmation-message" id="confirmationMessage">
+            <h3>¡Gracias por confirmar!</h3>
+            <p>Hemos recibido tu respuesta. Nos vemos el día de la boda.</p>
+        </div>
+
         <!-- Lista de regalos -->
         <div class="gift-section">
             <h2>🎁 Lista de Regalos</h2>
@@ -164,11 +196,57 @@
         </a>
     </div>
 
-    <script>
-        // Script para interacción (opcional)
-        document.addEventListener('DOMContentLoaded', function() {
-            // Aquí puedes añadir animaciones o interacciones
+<script>
+        // Manejo de los botones de asistencia
+        const attendingBtns = document.querySelectorAll('.attending-btn');
+        const attendingInput = document.getElementById('attending');
+        
+        attendingBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                attendingBtns.forEach(b => b.classList.remove('selected'));
+                this.classList.add('selected');
+                attendingInput.value = this.dataset.value;
+            });
         });
+
+        // Envío por WhatsApp
+        document.getElementById('sendWhatsApp').addEventListener('click', function() {
+            const name = document.getElementById('name').value;
+            const attending = document.getElementById('attending').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !attending) {
+                alert('Por favor completa los campos obligatorios');
+                return;
+            }
+            
+            const confirmation = attending === 'si' ? 'asistiré' : 'no podré asistir';
+            let whatsappMessage = `Hola Emily y Miguel, soy ${name}. Les confirmo que ${confirmation} a su boda.`;
+            
+            if (message) {
+                whatsappMessage += `\n\nMi mensaje: ${message}`;
+            }
+            
+            // Codificar el mensaje para URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            // Abrir WhatsApp con el mensaje
+            window.open(`https://wa.me/523328657192?text=${encodedMessage}`, '_blank');
+            
+            // Mostrar confirmación
+            document.getElementById('rsvpForm').style.display = 'none';
+            document.getElementById('confirmationMessage').style.display = 'block';
+            document.getElementById('confirmationMessage').scrollIntoView({ behavior: 'smooth' });
+            
+            // Guardar en localStorage
+            localStorage.setItem('rsvpSubmitted', 'true');
+        });
+
+        // Verificar si ya se envió el RSVP
+        if (localStorage.getItem('rsvpSubmitted') === 'true') {
+            document.getElementById('rsvpForm').style.display = 'none';
+            document.getElementById('confirmationMessage').style.display = 'block';
+        }
     </script>
 </body>
 </html>
