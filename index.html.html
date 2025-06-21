@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Nos Casamos! | [Novio] & [Novia]</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        header * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            margin: 10px 0 0;
+            font-weight: 300;
+        }
+        
+        /* Sección de detalles */
+        .details {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: white;
+        }
+        
+        .details h2 {
+            font-family: 'Playfair Display', serif;
+            color: #1e3a8a;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .detail-card {
+            display: inline-block;
+            width: 200px;
+            margin: 15px;
+            vertical-align: top;
+        }
+        
+        .detail-card h3 {
+            color: #3b82f6;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Sección de foto */
+        .photo-section {
+            background-color: #f0f7ff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .couple-photo {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            display: block;
+        }
+        
+        /* RSVP */
+        .rsvp {
+            background-color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .rsvp-button {
+            display: inline-block;
+            background-color: #1e3a8a;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            border: 2px solid #1e3a8a;
+        }
+        
+        .rsvp-button:hover {
+            background-color: white;
+            color: #1e3a8a;
+        }
+        
+        /* Mapa */
+        .map-section {
+            padding: 40px 20px;
+            background-color: #f0f7ff;
+            text-align: center;
+        }
+        
+        .map-container {
+            margin: 30px auto;
+            max-width: 800px;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1e3a8a;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .detail-card {
+                width: 100%;
+                margin: 15px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado hero -->
+    <header>
+        <div class="container">
+            <h1>María & Juan</h1>
+            <p class="subtitle">¡Queremos compartir este día especial contigo!</p>
+        </div>
+    </header>
+    
+    <!-- Detalles del evento -->
+    <section class="details">
+        <div class="container">
+            <h2>Nuestra Boda</h2>
+            
+            <div class="detail-card">
+                <h3>Fecha</h3>
+                <p>15 de Diciembre, 2024</p>
+            </div>
+            
+            <div class="detail-card">
+                <h3>Hora</h3>
+                <p>4:00 PM</p>
+            </div>
+            
+            <div class="detail-card">
+                <h3>Lugar</h3>
+                <p>Hacienda Las Flores<br>Guadalajara, México</p>
+            </div>
+            
+            <div class="detail-card">
+                <h3>Código de Vestimenta</h3>
+                <p>Formal</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Foto de la pareja -->
+    <section class="photo-section">
+        <div class="container">
+            <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="María y Juan" class="couple-photo">
+        </div>
+    </section>
+    
+    <!-- RSVP -->
+    <section class="rsvp">
+        <div class="container">
+            <h2>Confirma tu asistencia</h2>
+            <p>Por favor, confirma tu presencia antes del 1 de Noviembre</p>
+            <a href="#rsvp" class="rsvp-button">RSVP</a>
+        </div>
+    </section>
+    
+    <!-- Mapa -->
+    <section class="map-section">
+        <div class="container">
+            <h2>Ubicación</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.715427764318!2d-103.39182792422493!3d20.67778098088403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ae3a276a3a61%3A0x62265dd3b7b7c3e1!2sHacienda%20Las%20Flores!5e0!3m2!1ses!2smx!4v1712345678901!5m2!1ses!2smx" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pie de página -->
+    <footer>
+        <div class="container">
+            <p>¡Esperamos celebrar contigo este día tan especial!</p>
+            <p>Con amor, María & Juan</p>
+        </div>
+    </footer>
+</body>
+</html>
