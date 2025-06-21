@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>¡Nos Casamos! | Emily & Miguel</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
- <style>
+
+    <style>
         body {
             font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;More actions
+            background-color: #f8f9fa;
             color: #333;
             line-height: 1.6;
         }
+
         header {
             background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
             color: white;
@@ -21,6 +23,7 @@
             padding: 50px 20px;
             position: relative;
         }
+
         .header-image {
             width: 150px;
             height: 150px;
@@ -30,11 +33,13 @@
             margin: 20px auto;
             display: block;
         }
+
         h1 {
             font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
             margin-bottom: 10px;
         }
+
         .invitation-text {
             max-width: 600px;
             margin: 30px auto;
@@ -42,6 +47,7 @@
             line-height: 1.8;
             text-align: center;
         }
+
         .location-card {
             background: white;
             border-radius: 10px;
@@ -50,25 +56,30 @@
             max-width: 500px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
+
         .gift-section {
             background: #f0f7ff;
             padding: 30px;
             margin: 40px 0;
             text-align: center;
         }
+
         .gift-list {
             list-style: none;
             padding: 0;
             max-width: 500px;
             margin: 20px auto;
         }
+
         .gift-list li {
             background: white;
-            margin: 10px 0;
+            margin: 10px 10px;
             padding: 15px;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-size: 1rem;
         }
+
         .photo-gallery {
             display: flex;
             flex-wrap: wrap;
@@ -76,23 +87,22 @@
             gap: 15px;
             margin: 30px 0;
         }
+
         .photo-gallery img {
             width: 100%;
             max-width: 300px;
+            height: auto;
             border-radius: 8px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.2);
         }
+
         .closing-text {
             font-style: italic;
             margin: 40px auto;
             text-align: center;
             max-width: 500px;
         }
-        @media (min-width: 768px) {
-            h1 { font-size: 3.5rem; }
-            .photo-gallery img {
-                width: calc(50% - 15px);
-            }
+
         .rsvp-form {
             background: white;
             border-radius: 10px;
@@ -101,14 +111,17 @@
             max-width: 500px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
+
         .form-group {
             margin-bottom: 20px;
         }
+
         .form-group label {
             display: block;
             margin-bottom: 8px;
             font-weight: 500;
         }
+
         .form-group input,
         .form-group textarea {
             width: 100%;
@@ -117,11 +130,13 @@
             border-radius: 5px;
             font-family: 'Montserrat', sans-serif;
         }
+
         .attending-options {
             display: flex;
             gap: 10px;
             margin-bottom: 20px;
         }
+
         .attending-btn {
             flex: 1;
             padding: 12px;
@@ -133,11 +148,13 @@
             cursor: pointer;
             transition: all 0.3s;
         }
+
         .attending-btn.selected {
             background: #1e3a8a;
             color: white;
             border-color: #1e3a8a;
         }
+
         .submit-btn {
             background: #1e3a8a;
             color: white;
@@ -149,9 +166,11 @@
             width: 100%;
             transition: background 0.3s;
         }
+
         .submit-btn:hover {
             background: #3b82f6;
         }
+
         .confirmation-message {
             display: none;
             background: #d4edda;
@@ -162,56 +181,72 @@
             max-width: 500px;
             text-align: center;
         }
+
+        @media (min-width: 768px) {
+            h1 { font-size: 3.5rem; }
+
+            .photo-gallery img {
+                width: calc(50% - 15px);
+            }
+        }
+
         @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .photo-gallery img {
+                width: 90%;
+            }
+
             .attending-options {
                 flex-direction: column;
             }
-            h1 {
-                font-size: 2rem;
+
+            .attending-btn {
+                width: 100%;
             }
         }
     </style>
 </head>
+
 <body>
+
     <header>
         <h1>Emily & Miguel</h1>
         <p>29 • Noviembre • 2025</p>
-        <img src="https://ejemplo.com/foto-pareja.jpg" alt="Emily y Miguel" class="header-image">
+        <img src="imagenes/portada.jpg" alt="Emily y Miguel" class="header-image">
     </header>
 
-    <!-- Texto de invitación -->
     <section class="container">
+
         <div class="invitation-text">
             <p>Queridos familiares y amigos,</p>
             <p>Con alegría en nuestros corazones, les invitamos a compartir el día más especial de nuestras vidas, cuando unamos nuestros caminos en matrimonio.</p>
             <p>Su presencia es el regalo más valioso que podríamos recibir.</p>
         </div>
 
-        <!-- Galería de fotos -->
         <div class="photo-gallery">
-            <img src="https://ejemplo.com/foto1.jpg" alt="Emily y Miguel juntos">
-            <img src="https://ejemplo.com/foto2.jpg" alt="Momento especial">
-            <img src="https://ejemplo.com/foto3.jpg" alt="Aventuras compartidas">
+            <img src="imagenes/foto1.jpg" alt="Emily y Miguel juntos">
+            <img src="imagenes/foto2.jpg" alt="Momento especial">
+            <img src="imagenes/foto3.jpg" alt="Aventuras compartidas">
         </div>
 
-        <!-- Detalles de la ceremonia -->
         <div class="location-card">
             <h2>💒 Ceremonia Religiosa</h2>
             <p><strong>Iglesia Señor de la Misericordia</strong></p>
             <p>7:00 PM | Ocotlán, Jalisco</p>
-            <img src="https://ejemplo.com/mapa-iglesia.jpg" alt="Mapa Iglesia" style="width:100%; margin-top:15px; border-radius:5px;">
+            <img src="imagenes/mapa-iglesia.jpg" alt="Mapa Iglesia" style="width:100%; margin-top:15px; border-radius:5px;">
         </div>
 
-        <!-- Detalles de la recepción -->
         <div class="location-card">
             <h2>🎉 Recepción</h2>
             <p><strong>Salón Barlobento</strong></p>
             <p>8:30 PM | Ocotlán, Jalisco</p>
             <p><em>Código de vestimenta: Formal elegante</em></p>
-            <img src="https://ejemplo.com/mapa-salon.jpg" alt="Mapa Salón" style="width:100%; margin-top:15px; border-radius:5px;">
+            <img src="imagenes/mapa-salon.jpg" alt="Mapa Salón" style="width:100%; margin-top:15px; border-radius:5px;">
         </div>
 
-          <!-- Formulario de RSVP -->
         <div class="rsvp-form" id="rsvpForm">
             <h2 style="text-align: center; margin-bottom: 20px;">Confirma tu asistencia</h2>
             <form id="weddingRsvp">
@@ -219,7 +254,6 @@
                     <label for="name">Nombre completo *</label>
                     <input type="text" id="name" name="name" required>
                 </div>
-                
                 <div class="form-group">
                     <label>¿Asistirás? *</label>
                     <div class="attending-options">
@@ -228,12 +262,10 @@
                     </div>
                     <input type="hidden" id="attending" name="attending" required>
                 </div>
-                
                 <div class="form-group">
                     <label for="message">Mensaje para los novios (opcional)</label>
                     <textarea id="message" name="message"></textarea>
                 </div>
-                
                 <button type="button" id="sendWhatsApp" class="submit-btn">Enviar por WhatsApp</button>
             </form>
         </div>
@@ -243,7 +275,6 @@
             <p>Hemos recibido tu respuesta. Nos vemos el día de la boda.</p>
         </div>
 
-        <!-- Lista de regalos -->
         <div class="gift-section">
             <h2>🎁 Lista de Regalos</h2>
             <p>Si desean hacernos un regalo, aquí algunas ideas:</p>
@@ -256,89 +287,78 @@
             <p>También pueden visitar nuestra lista en <a href="https://www.example.com/lista-regalos">example.com/lista-regalos</a></p>
         </div>
 
-        <!-- Texto de cierre -->
         <div class="closing-text">
             <p>"El amor no consiste en mirarse el uno al otro, sino en mirar juntos en la misma dirección."</p>
             <p>- Antoine de Saint-Exupéry</p>
             <p>Con todo nuestro amor,<br>Emily & Miguel</p>
         </div>
+
     </section>
 
-    <!-- Solución alternativa para música -->
-    <div style="text-align:center; margin:30px 0;">
-        <p>¿Quieres escuchar nuestra canción especial?</p>
-        <a href="https://www.youtube.com/watch?v=vGJTaP6anOU" target="_blank" style="background:#1e3a8a; color:white; padding:10px 20px; border-radius:5px; text-decoration:none;">
-            Escuchar "Can't Help Falling in Love"
-        </a>
-    </div>
-
-<script>
-    const attendingBtns = document.querySelectorAll('.attending-btn');
-    const attendingInput = document.getElementById('attending');
-    
-    attendingBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            attendingBtns.forEach(b => b.classList.remove('selected'));
-            this.classList.add('selected');
-            attendingInput.value = this.dataset.value;
+    <script>
+        const attendingBtns = document.querySelectorAll('.attending-btn');
+        const attendingInput = document.getElementById('attending');
+        
+        attendingBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                attendingBtns.forEach(b => b.classList.remove('selected'));
+                this.classList.add('selected');
+                attendingInput.value = this.dataset.value;
+            });
         });
-    });
 
-    document.getElementById('sendWhatsApp').addEventListener('click', function() {
-        const name = document.getElementById('name').value;
-        const attending = document.getElementById('attending').value;
-        const message = document.getElementById('message').value;
-        
-        if (!name || !attending) {
-            alert('Por favor completa los campos obligatorios');
-            return;
+        document.getElementById('sendWhatsApp').addEventListener('click', function() {
+            const name = document.getElementById('name').value;
+            const attending = document.getElementById('attending').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !attending) {
+                alert('Por favor completa los campos obligatorios');
+                return;
+            }
+            
+            const confirmation = attending === 'si' ? 'asistiré' : 'no podré asistir';
+            let whatsappMessage = `Hola Emily y Miguel, soy ${name}. Les confirmo que ${confirmation} a su boda.`;
+            
+            if (message) {
+                whatsappMessage += `\n\nMi mensaje: ${message}`;
+            }
+            
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            window.open(`https://wa.me/523328657192?text=${encodedMessage}`, '_blank');
+            
+            document.getElementById('rsvpForm').style.display = 'none';
+            document.getElementById('confirmationMessage').style.display = 'block';
+            document.getElementById('confirmationMessage').scrollIntoView({ behavior: 'smooth' });
+
+            sessionStorage.setItem('rsvpSubmitted', 'true');
+        });
+
+        if (sessionStorage.getItem('rsvpSubmitted') === 'true') {
+            document.getElementById('rsvpForm').style.display = 'none';
+            document.getElementById('confirmationMessage').style.display = 'block';
         }
-        
-        const confirmation = attending === 'si' ? 'asistiré' : 'no podré asistir';
-        let whatsappMessage = `Hola Emily y Miguel, soy ${name}. Les confirmo que ${confirmation} a su boda.`;
-        
-        if (message) {
-            whatsappMessage += `\n\nMi mensaje: ${message}`;
-        }
-        
-        const encodedMessage = encodeURIComponent(whatsappMessage);
-        window.open(`https://wa.me/523328657192?text=${encodedMessage}`, '_blank');
-        
-        // Mostrar confirmación
-        document.getElementById('rsvpForm').style.display = 'none';
-        document.getElementById('confirmationMessage').style.display = 'block';
-        document.getElementById('confirmationMessage').scrollIntoView({ behavior: 'smooth' });
 
-        // Guardar solo en sessionStorage (se borra al cerrar pestaña)
-        sessionStorage.setItem('rsvpSubmitted', 'true');
-    });
+        const confirmationBlock = document.getElementById('confirmationMessage');
+        const modifyBtn = document.createElement('button');
+        modifyBtn.textContent = 'Modificar respuesta';
+        modifyBtn.style.marginTop = '15px';
+        modifyBtn.style.padding = '10px 20px';
+        modifyBtn.style.background = '#1e3a8a';
+        modifyBtn.style.color = 'white';
+        modifyBtn.style.border = 'none';
+        modifyBtn.style.borderRadius = '5px';
+        modifyBtn.style.cursor = 'pointer';
 
-    // Verificar si ya se envió el RSVP en esta sesión
-    if (sessionStorage.getItem('rsvpSubmitted') === 'true') {
-        document.getElementById('rsvpForm').style.display = 'none';
-        document.getElementById('confirmationMessage').style.display = 'block';
-    }
+        modifyBtn.addEventListener('click', () => {
+            sessionStorage.removeItem('rsvpSubmitted');
+            document.getElementById('rsvpForm').style.display = 'block';
+            confirmationBlock.style.display = 'none';
+            window.scrollTo({ top: document.getElementById('rsvpForm').offsetTop, behavior: 'smooth' });
+        });
 
-    // Botón para permitir modificar respuesta (opcional)
-    const confirmationBlock = document.getElementById('confirmationMessage');
-    const modifyBtn = document.createElement('button');
-    modifyBtn.textContent = 'Modificar respuesta';
-    modifyBtn.style.marginTop = '15px';
-    modifyBtn.style.padding = '10px 20px';
-    modifyBtn.style.background = '#1e3a8a';
-    modifyBtn.style.color = 'white';
-    modifyBtn.style.border = 'none';
-    modifyBtn.style.borderRadius = '5px';
-    modifyBtn.style.cursor = 'pointer';
-    
-    modifyBtn.addEventListener('click', () => {
-        sessionStorage.removeItem('rsvpSubmitted');
-        document.getElementById('rsvpForm').style.display = 'block';
-        confirmationBlock.style.display = 'none';
-        window.scrollTo({ top: document.getElementById('rsvpForm').offsetTop, behavior: 'smooth' });
-    });
+        confirmationBlock.appendChild(modifyBtn);
+    </script>
 
-    confirmationBlock.appendChild(modifyBtn);
-</script>
 </body>
 </html>
