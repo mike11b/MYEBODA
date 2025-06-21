@@ -19,6 +19,16 @@
             color: white;
             text-align: center;
             padding: 50px 20px;
+            position: relative;
+        }
+        .header-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid white;
+            object-fit: cover;
+            margin: 20px auto;
+            display: block;
         }
         h1 {
             font-family: 'Playfair Display', serif;
@@ -30,6 +40,7 @@
             margin: 30px auto;
             font-size: 1.1rem;
             line-height: 1.8;
+            text-align: center;
         }
         .location-card {
             background: white;
@@ -39,9 +50,37 @@
             max-width: 500px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        .music-player {
-            margin: 30px auto;
+        .gift-section {
+            background: #f0f7ff;
+            padding: 30px;
+            margin: 40px 0;
             text-align: center;
+        }
+        .gift-list {
+            list-style: none;
+            padding: 0;
+            max-width: 500px;
+            margin: 20px auto;
+        }
+        .gift-list li {
+            background: white;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        .photo-gallery img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
         }
         .closing-text {
             font-style: italic;
@@ -51,6 +90,9 @@
         }
         @media (min-width: 768px) {
             h1 { font-size: 3.5rem; }
+            .photo-gallery img {
+                width: calc(50% - 15px);
+            }
         }
     </style>
 </head>
@@ -58,6 +100,7 @@
     <header>
         <h1>Emily & Miguel</h1>
         <p>15 • Diciembre • 2024</p>
+        <img src="https://ejemplo.com/foto-pareja.jpg" alt="Emily y Miguel" class="header-image">
     </header>
 
     <!-- Texto de invitación -->
@@ -68,11 +111,19 @@
             <p>Su presencia es el regalo más valioso que podríamos recibir.</p>
         </div>
 
+        <!-- Galería de fotos -->
+        <div class="photo-gallery">
+            <img src="https://ejemplo.com/foto1.jpg" alt="Emily y Miguel juntos">
+            <img src="https://ejemplo.com/foto2.jpg" alt="Momento especial">
+            <img src="https://ejemplo.com/foto3.jpg" alt="Aventuras compartidas">
+        </div>
+
         <!-- Detalles de la ceremonia -->
         <div class="location-card">
             <h2>💒 Ceremonia Religiosa</h2>
             <p><strong>Iglesia Señor de la Misericordia</strong></p>
             <p>7:00 PM | Ocotlán, Jalisco</p>
+            <img src="https://ejemplo.com/mapa-iglesia.jpg" alt="Mapa Iglesia" style="width:100%; margin-top:15px; border-radius:5px;">
         </div>
 
         <!-- Detalles de la recepción -->
@@ -81,15 +132,20 @@
             <p><strong>Salón Barlobento</strong></p>
             <p>8:30 PM | Ocotlán, Jalisco</p>
             <p><em>Código de vestimenta: Formal elegante</em></p>
+            <img src="https://ejemplo.com/mapa-salon.jpg" alt="Mapa Salón" style="width:100%; margin-top:15px; border-radius:5px;">
         </div>
 
-        <!-- Música automática (oculta) -->
-        <div class="music-player">
-            <audio autoplay loop controls style="display:none;">
-                <source src="https://soundcloud.com/elvissonymusic/cant-help-falling-in-953786220?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" type="audio/mpeg">
-                Tu navegador no soporta audio.
-            </audio>
-            <small>Música de fondo activada ♫</small>
+        <!-- Lista de regalos -->
+        <div class="gift-section">
+            <h2>🎁 Lista de Regalos</h2>
+            <p>Si desean hacernos un regalo, aquí algunas ideas:</p>
+            <ul class="gift-list">
+                <li>Contribución para nuestra luna de miel</li>
+                <li>Artículos para nuestro hogar</li>
+                <li>Tarjetas de regalo</li>
+                <li>Experiencias compartidas</li>
+            </ul>
+            <p>También pueden visitar nuestra lista en <a href="https://www.example.com/lista-regalos">example.com/lista-regalos</a></p>
         </div>
 
         <!-- Texto de cierre -->
@@ -100,12 +156,19 @@
         </div>
     </section>
 
+    <!-- Solución alternativa para música -->
+    <div style="text-align:center; margin:30px 0;">
+        <p>¿Quieres escuchar nuestra canción especial?</p>
+        <a href="https://www.youtube.com/watch?v=vGJTaP6anOU" target="_blank" style="background:#1e3a8a; color:white; padding:10px 20px; border-radius:5px; text-decoration:none;">
+            Escuchar "Can't Help Falling in Love"
+        </a>
+    </div>
+
     <script>
-        // Script para asegurar que la música se reproduzca después de interacción
-        document.addEventListener('click', function() {
-            const audio = document.querySelector('audio');
-            audio.play().catch(e => console.log("Auto-play prevented"));
-        }, { once: true });
+        // Script para interacción (opcional)
+        document.addEventListener('DOMContentLoaded', function() {
+            // Aquí puedes añadir animaciones o interacciones
+        });
     </script>
 </body>
 </html>
