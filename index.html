@@ -4,19 +4,172 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>¡Nos Casamos! | Emily & Miguel</title>
-   <link href="css/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* === ESTILOS GENERALES === */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        /* === HEADER === */
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid white;
+            object-fit: cover;
+            margin: 20px auto;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* === CONTADOR DE DÍAS === */
+        .countdown {
+            font-size: 1.2rem;
+            margin: 15px auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        #countdown-days {
+            font-weight: 700;
+            color: #ffeb3b;
+            font-size: 1.5rem;
+        }
+
+        /* === SECCIONES === */
+        .invitation-text {
+            max-width: 600px;
+            margin: 30px auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .location-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 500px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* === GALERÍA === */
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .photo-gallery img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            transition: all 0.5s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        /* === RSVP === */
+        .rsvp-form {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px auto;
+            max-width: 500px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        /* === DECORACIÓN FLORAL === */
+        .floral-decoration {
+            position: fixed;
+            width: 120px;
+            height: 120px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%231e3a8a" d="M50 0 Q60 40 80 60 Q40 60 0 50 Q40 40 50 0 Z"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 100;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .top-left { top: 0; left: 0; }
+        .top-right { top: 0; right: 0; transform: scaleX(-1); }
+        .bottom-left { bottom: 0; left: 0; transform: scaleY(-1); }
+        .bottom-right { bottom: 0; right: 0; transform: scale(-1); }
+
+        /* === BOTÓN DE MÚSICA === */
+        .music-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #1e3a8a;
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .floral-decoration { width: 80px; height: 80px; }
+        }
+
+        @media (max-width: 480px) {
+            .floral-decoration { display: none; }
+            .photo-gallery img { width: 90%; }
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Decoración floral -->
+    <!-- Decoración floral SVG integrada -->
     <div class="floral-decoration top-left"></div>
     <div class="floral-decoration top-right"></div>
 
     <header>
-        <div class="header-overlay"></div>
         <h1>Emily & Miguel</h1>
         <p>29 • Noviembre • 2025</p>
-        <img src="images/portada.png" alt="Emily y Miguel" class="header-image">
+        <img src="images/portada.png" class="header-image">
         
         <!-- Contador de días -->
         <div class="countdown">
@@ -25,30 +178,31 @@
     </header>
 
     <!-- Botón de música -->
-    <button id="music-toggle" class="music-toggle">🎵 Reproducir música</button>
+    <button id="music-toggle" class="music-toggle">🎵 Música</button>
     <audio id="wedding-music" loop>
-        <source src="audio/cant-help-falling-in-love.mp3" type="audio/mpeg">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
     </audio>
 
     <section class="container">
-        <!-- Contenido original SIN MODIFICACIONES -->
+        <!-- Invitación -->
         <div class="invitation-text">
             <p>Queridos familiares y amigos,</p>
             <p>Con alegría en nuestros corazones, les invitamos a compartir el día más especial de nuestras vidas, cuando unamos nuestros caminos en matrimonio.</p>
             <p>Su presencia es el regalo más valioso que podríamos recibir.</p>
         </div>
 
+        <!-- Galería -->
         <div class="photo-gallery">
-            <img src="images/foto1.jpg" alt="Emily y Miguel juntos">
-            <img src="images/foto2.jpg" alt="Momento especial">
-            <img src="images/foto3.jpg" alt="Aventuras compartidas">
+            <img src="https://i.imgur.com/xybTZJM.jpg" alt="Emily y Miguel juntos">
+            <img src="https://i.imgur.com/xybTZJM.jpg" alt="Momento especial">
+            <img src="https://i.imgur.com/xybTZJM.jpg" alt="Aventuras compartidas">
         </div>
 
+        <!-- Ubicaciones -->
         <div class="location-card">
             <h2>💒 Ceremonia Religiosa</h2>
             <p><strong>Iglesia Señor de la Misericordia</strong></p>
             <p>7:00 PM | Ocotlán, Jalisco</p>
-            <img src="images/mapa-iglesia.jpg" alt="Mapa Iglesia" style="width:100%; margin-top:15px; border-radius:5px;">
         </div>
 
         <div class="location-card">
@@ -56,11 +210,11 @@
             <p><strong>Salón Barlobento</strong></p>
             <p>8:30 PM | Ocotlán, Jalisco</p>
             <p><em>Código de vestimenta: Formal elegante</em></p>
-            <img src="images/mapa-salon.jpg" alt="Mapa Salón" style="width:100%; margin-top:15px; border-radius:5px;">
         </div>
 
+        <!-- RSVP -->
         <div class="rsvp-form" id="rsvpForm">
-            <h2 style="text-align: center; margin-bottom: 20px;">Confirma tu asistencia</h2>
+            <h2 style="text-align: center;">Confirma tu asistencia</h2>
             <form id="weddingRsvp">
                 <div class="form-group">
                     <label for="name">Nombre completo *</label>
@@ -68,38 +222,28 @@
                 </div>
                 <div class="form-group">
                     <label>¿Asistirás? *</label>
-                    <div class="attending-options">
+                    <div style="display: flex; gap: 10px;">
                         <button type="button" class="attending-btn" data-value="si">¡Sí, estaré!</button>
                         <button type="button" class="attending-btn" data-value="no">No podré asistir</button>
                     </div>
                     <input type="hidden" id="attending" name="attending" required>
                 </div>
-                <div class="form-group">
-                    <label for="message">Mensaje para los novios (opcional)</label>
-                    <textarea id="message" name="message"></textarea>
-                </div>
                 <button type="button" id="sendWhatsApp" class="submit-btn">Enviar por WhatsApp</button>
             </form>
         </div>
 
-        <div class="confirmation-message" id="confirmationMessage">
-            <h3>¡Gracias por confirmar!</h3>
-            <p>Hemos recibido tu respuesta. Nos vemos el día de la boda.</p>
-        </div>
-
-        <div class="gift-section">
+        <!-- Lista de regalos -->
+        <div class="gift-section" style="background: #f0f7ff; padding: 30px; margin: 40px 0; text-align: center;">
             <h2>🎁 Lista de Regalos</h2>
             <p>Si desean hacernos un regalo, aquí algunas ideas:</p>
-            <ul class="gift-list">
-                <li>Contribución para nuestra luna de miel</li>
-                <li>Artículos para nuestro hogar</li>
-                <li>Tarjetas de regalo</li>
-                <li>Experiencias compartidas</li>
+            <ul style="list-style: none; padding: 0; max-width: 500px; margin: 20px auto;">
+                <li style="background: white; margin: 10px; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">Contribución para nuestra luna de miel</li>
+                <li style="background: white; margin: 10px; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">Artículos para nuestro hogar</li>
             </ul>
-            <p>También pueden visitar nuestra lista en <a href="https://www.example.com/lista-regalos">example.com/lista-regalos</a></p>
         </div>
 
-        <div class="closing-text">
+        <!-- Cierre -->
+        <div class="closing-text" style="font-style: italic; margin: 40px auto; text-align: center; max-width: 500px;">
             <p>"El amor no consiste en mirarse el uno al otro, sino en mirar juntos en la misma dirección."</p>
             <p>- Antoine de Saint-Exupéry</p>
             <p>Con todo nuestro amor,<br>Emily & Miguel</p>
@@ -110,6 +254,68 @@
     <div class="floral-decoration bottom-left"></div>
     <div class="floral-decoration bottom-right"></div>
 
-    <script src="js/scripts.js"></script>
+    <script>
+        // ===== CONTADOR DE DÍAS =====
+        function updateCountdown() {
+            const weddingDate = new Date('November 29, 2025 00:00:00');
+            const today = new Date();
+            const diff = weddingDate - today;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            
+            document.getElementById('countdown-days').textContent = days;
+        }
+
+        // ===== MÚSICA =====
+        const musicToggle = document.getElementById('music-toggle');
+        const weddingMusic = document.getElementById('wedding-music');
+        let isMusicPlaying = false;
+
+        musicToggle.addEventListener('click', () => {
+            isMusicPlaying ? weddingMusic.pause() : weddingMusic.play();
+            musicToggle.textContent = isMusicPlaying ? '🎵 Música' : '❌ Detener';
+            isMusicPlaying = !isMusicPlaying;
+        });
+
+        // ===== ANIMACIÓN FOTOS =====
+        function animatePhotos() {
+            const photos = document.querySelectorAll('.photo-gallery img');
+            photos.forEach((photo, index) => {
+                setTimeout(() => {
+                    photo.style.opacity = '1';
+                    photo.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        }
+
+        // ===== RSVP =====
+        document.querySelectorAll('.attending-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.attending-btn').forEach(b => b.style.background = '');
+                this.style.background = '#1e3a8a';
+                this.style.color = 'white';
+                document.getElementById('attending').value = this.dataset.value;
+            });
+        });
+
+        document.getElementById('sendWhatsApp').addEventListener('click', function() {
+            const name = document.getElementById('name').value;
+            const attending = document.getElementById('attending').value;
+            
+            if (!name || !attending) {
+                alert('Por favor completa los campos obligatorios');
+                return;
+            }
+            
+            const message = `Hola Emily y Miguel, soy ${name}. Les confirmo que ${attending === 'si' ? 'asistiré' : 'no podré asistir'} a su boda.`;
+            window.open(`https://wa.me/523328657192?text=${encodeURIComponent(message)}`, '_blank');
+        });
+
+        // ===== INICIALIZACIÓN =====
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCountdown();
+            setInterval(updateCountdown, 86400000); // Actualizar cada día
+            animatePhotos();
+        });
+    </script>
 </body>
 </html>
