@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emily y Miguel - Nuestra Historia Comenzo</title>
+    <title>Emily y Miguel - Bodas</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -91,7 +91,7 @@
             width: 100%;
             height: 100vh;
             background-color: #ddd;
-            background-image:img src="images/portada.png";
+            background-image: url('images/portada.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -482,7 +482,7 @@
 <body>
     <header>
         <div class="logo">EMILY & MIGUEL</div>
-        <div class="subtitle">NUESTRA BODA</div>
+        <div class="subtitle">BODAS</div>
     </header>
     
     <nav>
@@ -490,7 +490,7 @@
         <a href="#nosotros">NOSOTROS</a>
         <a href="#boda">BODA</a>
         <a href="#galeria">GALERÍA</a>
-        <a href="#contacto">CONFIRMA TU ASISTENCIA</a>
+        <a href="#contacto">CONTACTO</a>
     </nav>
     
     <section id="inicio" class="hero-image">
@@ -530,7 +530,7 @@
         
         <div class="location-info">
             <div class="location-card">
-                <div class="location-image" style="background-image: url('https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="location-image" style="background-image: url('images/parroquia.jpg');"></div>
                 <div class="location-content">
                     <h3>Ceremonia Religiosa</h3>
                     <p><i class="fas fa-church"></i> Parroquia Señor de la Misericordia</p>
@@ -542,7 +542,7 @@
             </div>
             
             <div class="location-card">
-                <div class="location-image" style="background-image: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="location-image" style="background-image: url('images/salon.jpg');"></div>
                 <div class="location-content">
                     <h3>Recepción</h3>
                     <p><i class="fas fa-glass-cheers"></i> Salón de Eventos Barlovento</p>
@@ -555,9 +555,9 @@
         </div>
         
         <div class="gallery">
-            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
-            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
-            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+            <div class="gallery-item" style="background-image: url('images/galeria1.jpg');"></div>
+            <div class="gallery-item" style="background-image: url('images/galeria2.jpg');"></div>
+            <div class="gallery-item" style="background-image: url('images/galeria3.jpg');"></div>
         </div>
     </section>
     
@@ -566,9 +566,9 @@
         <p>Algunos recuerdos especiales de nuestro camino juntos.</p>
         
         <div class="gallery">
-            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
-            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
-            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+            <div class="gallery-item" style="background-image: url('images/momento1.jpg');"></div>
+            <div class="gallery-item" style="background-image: url('images/momento2.jpg');"></div>
+            <div class="gallery-item" style="background-image: url('images/momento3.jpg');"></div>
         </div>
     </section>
     
@@ -622,25 +622,40 @@
     </div>
     
     <script>
-        // Cuenta regresiva
+        // Cuenta regresiva CORREGIDA
         function updateCountdown() {
-            const weddingDate = new Date('November 29, 2024 17:00:00').getTime();
-            const now = new Date().getTime();
-            const distance = weddingDate - now;
+            // Asegurarse que la fecha es correcta (29 de noviembre de 2024)
+            const weddingDate = new Date(2024, 10, 29, 17, 0, 0); // Los meses van de 0-11
+            const now = new Date();
             
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            // Calcular la diferencia en milisegundos
+            const diff = weddingDate - now;
             
+            // Si la fecha ya pasó, mostrar ceros
+            if (diff <= 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                return;
+            }
+            
+            // Calcular días, horas, minutos y segundos
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            // Actualizar el DOM
             document.getElementById('days').textContent = days.toString().padStart(2, '0');
             document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
             document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
             document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
         }
         
-        setInterval(updateCountdown, 1000);
+        // Ejecutar inmediatamente y luego cada segundo
         updateCountdown();
+        setInterval(updateCountdown, 1000);
         
         // Scroll animations
         function checkVisibility() {
