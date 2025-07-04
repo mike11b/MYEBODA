@@ -207,26 +207,7 @@
             position: relative;
             transition: transform 0.3s;
         }
-        
-        .gallery-item:hover {
-            transform: scale(1.03);
-        }
-        
-        .gallery-item::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.3);
-            transition: background 0.3s;
-        }
-        
-        .gallery-item:hover::after {
-            background: rgba(0,0,0,0.1);
-        }
-        
+                
         .location-info {
             display: flex;
             justify-content: space-between;
@@ -594,24 +575,6 @@
             </div>
         </div>
         
-        <div class="gallery">
-            <div class="gallery-item" style="background-image: url('images/galeria1.jpg');"></div>
-            <div class="gallery-item" style="background-image: url('images/galeria2.jpg');"></div>
-            <div class="gallery-item" style="background-image: url('images/galeria3.jpg');"></div>
-        </div>
-    </section>
-    
-    <section id="galeria">
-        <h2 class="section-title">Nuestros Momentos</h2>
-        <p>Algunos recuerdos especiales de nuestro camino juntos.</p>
-        
-        <div class="gallery">
-            <div class="gallery-item" style="background-image: url('images/momento1.jpg');"></div>
-            <div class="gallery-item" style="background-image: url('images/momento2.jpg');"></div>
-            <div class="gallery-item" style="background-image: url('images/momento3.jpg');"></div>
-        </div>
-    </section>
-    
     <section id="contacto">
         <h2 class="section-title">Confirmación de Asistencia</h2>
         <p>Por favor confirma tu asistencia antes del 15 de Octubre de 2025.</p>
