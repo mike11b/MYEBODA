@@ -639,34 +639,34 @@
     </footer>
     
     <!-- Modal de Confirmación -->
-    <div id="confirmationModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2 style="color: #8a6d5b; margin-bottom: 15px;">Confirmar Asistencia</h2>
-            <form id="confirmationForm">
-                <div class="form-group">
-                    <label for="name">Nombre Completo</label>
-                    <input type="text" id="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Correo Electrónico</label>
-                    <input type="email" id="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="attending">¿Contaremos con tu presencia?</label>
-                    <select id="attending" required>
-                        <option value="yes">Sí, con mucho gusto</option>
-                        <option value="no">Lamentablemente no podré asistir</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Mensaje (opcional)</label>
-                    <textarea id="message"></textarea>
-                </div>
-                <button type="submit" class="btn">ENVIAR CONFIRMACIÓN</button>
-            </form>
-        </div>
+<div id="confirmationModal" class="modal">
+    <div class="modal-content" style="width: 90%; max-width: 500px; margin: 10% auto;">
+        <span class="close">&times;</span>
+        <h2 style="color: #8a6d5b; margin-bottom: 15px;">Confirmar Asistencia</h2>
+        <form id="confirmationForm">
+            <div class="form-group">
+                <label for="name">Nombre Completo</label>
+                <input type="text" id="name" required style="width: 100%; box-sizing: border-box;">
+            </div>
+            <div class="form-group">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" required style="width: 100%; box-sizing: border-box;">
+            </div>
+            <div class="form-group">
+                <label for="attending">¿Contaremos con tu presencia?</label>
+                <select id="attending" required style="width: 100%; box-sizing: border-box;">
+                    <option value="yes">Sí, con mucho gusto</option>
+                    <option value="no">Lamentablemente no podré asistir</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Mensaje (opcional)</label>
+                <textarea id="message" style="width: 100%; box-sizing: border-box;"></textarea>
+            </div>
+            <button type="submit" class="btn">ENVIAR CONFIRMACIÓN</button>
+        </form>
     </div>
+</div>
     
     <!-- Reproductor de Audio -->
     <audio id="bgMusic" loop>
@@ -723,36 +723,58 @@
         window.addEventListener('scroll', checkVisibility);
         window.addEventListener('load', checkVisibility);
         
-        // Modal functionality
-        const modal = document.getElementById('confirmationModal');
-        const btn = document.getElementById('confirmBtn');
-        const span = document.getElementsByClassName('close')[0];
-        const form = document.getElementById('confirmationForm');
-        
-        btn.onclick = function() {
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
-        
-        span.onclick = function() {
+    // Modal functionality
+    const modal = document.getElementById('confirmationModal');
+    const btn = document.getElementById('confirmBtn');
+    const span = document.getElementsByClassName('close')[0];
+    const form = document.getElementById('confirmationForm');
+    
+    btn.onclick = function() {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+    
+    span.onclick = function() {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    
+    window.onclick = function(event) {
+        if (event.target == modal) {
             modal.style.display = 'none';
             document.body.style.overflow = 'auto';
         }
+    }
+    
+    form.onsubmit = function(e) {
+        e.preventDefault();
         
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        }
+        // Obtener los valores del formulario
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const attending = document.getElementById('attending').value;
+        const message = document.getElementById('message').value;
         
-        form.onsubmit = function(e) {
-            e.preventDefault();
-            alert('¡Gracias por confirmar tu asistencia! Nos vemos en la boda.');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-            form.reset();
-        }
+        // Crear el mensaje para WhatsApp
+        const whatsappMessage = `*Confirmación de Asistencia a la Boda*%0A%0A` +
+                               `*Nombre:* ${name}%0A` +
+                               `*Email:* ${email}%0A` +
+                               `*Asistencia:* ${attending === 'yes' ? 'Sí asistirá' : 'No podrá asistir'}%0A` +
+                               `*Mensaje:* ${message || 'Ninguno'}`;
+        
+        // Crear el enlace de WhatsApp
+        const whatsappUrl = `https://wa.me/528143468204?text=${whatsappMessage}`;
+        
+        // Abrir WhatsApp
+        window.open(whatsappUrl, '_blank');
+        
+        // Cerrar el modal
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        form.reset();
+        
+        return false;
+    }
         
         // Smooth scrolling for navigation
         document.querySelectorAll('nav a').forEach(anchor => {
