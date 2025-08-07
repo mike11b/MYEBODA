@@ -880,12 +880,8 @@
             
             // Validar formulario
             const name = document.getElementById('name').value;
-            const pase = document.getElementById('pase').value;
             const attending = document.getElementById('attending').value;
-            
-            if (!name || !pase || !attending) {
-                alert('Por favor completa todos los campos requeridos');
-                return false;
+
             }
             
             // Crear el mensaje para WhatsApp
@@ -893,7 +889,6 @@
             
             const whatsappMessage = `*Confirmación de Asistencia a la Boda*%0A%0A` +
                                  `*Nombre:* ${name}%0A` +
-                                 `*Número de Pase:* ${pase}%0A` +
                                  `*Asistencia:* ${attending === 'yes' ? 'Sí asistirá' : 'No podrá asistir'}%0A` +
                                  `*Mensaje:* ${message || 'Ninguno'}`;
             
