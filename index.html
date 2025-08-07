@@ -928,10 +928,10 @@
             // Crear el mensaje para WhatsApp
             const message = document.getElementById('message').value;
             
-            const whatsappMessage = `*Confirmación de Asistencia a la Boda*%0A%0A` +
-                                 `*Nombre:* ${name}%0A` +
-                                 `*Asistencia:* ${attending === 'yes' ? 'Sí asistirá' : 'No podrá asistir'}%0A` +
-                                 `*Mensaje:* ${message || 'Ninguno'}`;
+            const whatsappMessage = `Confirmación de Asistencia a la Boda%0A%0A` +
+                                 `Nombre: ${name}%0A` +
+                                 `Asistencia: ${attending === 'yes' ? 'Sí asistirá' : 'No podrá asistir'}%0A` +
+                                 `Mensaje: ${message || 'Ninguno'}`;
             
             // Crear el enlace de WhatsApp
             const whatsappUrl = `https://wa.me/523591172892?text=${whatsappMessage}`;
